@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MoodBrew – Find Your Drink</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f5f3f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    form {
+      background: #fff;
+      padding: 1.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 320px;
+    }
+    label { display: block; margin-top: 1rem; font-weight: 600; }
+    input, select {
+      width: 100%; padding: 0.5rem; margin-top: 0.3rem;
+      border: 1px solid #ccc; border-radius: 6px;
+    }
+    button {
+      margin-top: 1.5rem; padding: 0.7rem 1rem;
+      background: #654321; color: #fff; border: none;
+      border-radius: 6px; cursor: pointer; width: 100%;
+    }
+    #result {
+      margin-top: 2rem; text-align: center; max-width: 350px;
+    }
+    #result img {
+      width: 100%; border-radius: 10px; margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🍵 MoodBrew Recommender</h1>
+  <form id="recommendForm">
+    {% csrf_token %}
+    <label for="mood">Mood</label>
+    <select id="mood" name="mood">
+      <option value="">-- choose --</option>
+      <option value="cozy">Cozy</option>
+      <option value="tired">Tired</option>
+      <option value="energetic">Energetic</option>
+      <option value="romantic">Romantic</option>
+      <option value="stressed">Stressed</option>
+    </select>
+
+    <label for="time_of_day">Time of Day</label>
+    <select id="time_of_day" name="time_of_day">
+      <option value="">-- choose --</option>
+      <option value="morning">Morning</option>
+      <option value="afternoon">Afternoon</option>
+      <option value="evening">Evening</option>
+      <option value="night">Night</option>
+    </select>
+
+    <label for="season">Season</label>
+    <select id="season" name="season">
+      <option value="">-- choose --</option>
+      <option value="spring">Spring</option>
+      <option value="summer">Summer</option>
+      <option value="autumn">Fall</option>
+      <option value="winter">Winter</option>
+    </select>
+
+    <label for="city">City (for weather)</label>
+    <input type="text" id="city" name="city" placeholder="e.g. London">
+
+    <button type="submit">Find My Drink</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    const form = document.getElementById('recommendForm');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const payload = {
+        mood: form.mood.value || null,
+        time_of_day: form.time_of_day.value || null,
+        season: form.season.value || null,
+        city: form.city.value || null
+      };
+
+      resultDiv.innerHTML = "Brewing your recommendation... ☕";
+
+      try {
+        const res = await fetch("/api/recommend/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": document.querySelector('[name=csrfmiddlewaretoken]').value
+            },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+        if (res.ok) {
+          resultDiv.innerHTML = `
+            <h2>${data.name}</h2>
+            <p><em>${data.category}</em></p>
+            <p>${data.description}</p>
+            ${data.image_url ? `<img src="${data.image_url}" alt="${data.name}">` : ""}
+          `;
+        } else {
+          resultDiv.innerHTML = `<p>⚠️ ${data.message || 'No drink found.'}</p>`;
+        }
+      } catch (err) {
+        resultDiv.innerHTML = `<p>❌ Error connecting to server.</p>`;
+      }
+    });
+  </script>
+</body>
+</html>

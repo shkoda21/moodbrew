@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Earl Grey Comfort",
+    "category": "tea",
+    "description": "A soothing black tea with bergamot aroma, perfect for quiet moments and rainy afternoons.",
+    "moods": ["calm", "thoughtful", "cozy"],
+    "weather": ["rainy", "cloudy"],
+    "time_of_day": ["afternoon", "evening"],
+    "season": ["fall", "winter"],
+    "image_url": "https://example.com/images/earl_grey.jpg"
+  },
+  {
+    "name": "Matcha Sunrise",
+    "category": "tea",
+    "description": "Vibrant green matcha whisked to a smooth froth — earthy energy for a mindful start.",
+    "moods": ["focused", "fresh", "energized"],
+    "weather": ["sunny", "clear"],
+    "time_of_day": ["morning"],
+    "season": ["spring", "summer"],
+    "image_url": "https://example.com/images/matcha_sunrise.jpg"
+  },
+  {
+    "name": "Chamomile Dream",
+    "category": "tea",
+    "description": "Gentle chamomile blossoms steeped in honey — your invitation to unwind and drift.",
+    "moods": ["relaxed", "sleepy", "comforted"],
+    "weather": ["calm", "rainy"],
+    "time_of_day": ["evening", "night"],
+    "season": ["fall", "winter"],
+    "image_url": "https://example.com/images/chamomile_dream.jpg"
+  },
+  {
+    "name": "Espresso Ignite",
+    "category": "coffee",
+    "description": "Pure, dark espresso — bold intensity in a small cup, made to spark your inner fire.",
+    "moods": ["motivated", "tired", "focused"],
+    "weather": ["clear", "cold"],
+    "time_of_day": ["morning", "afternoon"],
+    "season": ["winter", "fall"],
+    "image_url": "https://example.com/images/espresso_ignite.jpg"
+  },
+  {
+    "name": "Iced Vanilla Breeze",
+    "category": "coffee",
+    "description": "Chilled espresso with vanilla and cream — smooth refreshment on warm, lazy days.",
+    "moods": ["chill", "carefree", "happy"],
+    "weather": ["hot", "sunny"],
+    "time_of_day": ["afternoon"],
+    "season": ["summer"],
+    "image_url": "https://example.com/images/iced_vanilla_breeze.jpg"
+  },
+  {
+    "name": "Caramel Whisper Latte",
+    "category": "coffee",
+    "description": "Velvety milk and caramel swirl through espresso — the flavor of comfort and quiet joy.",
+    "moods": ["cozy", "nostalgic", "gentle"],
+    "weather": ["cold", "rainy"],
+    "time_of_day": ["morning", "evening"],
+    "season": ["fall", "winter"],
+    "image_url": "https://example.com/images/caramel_whisper_latte.jpg"
+  },
+  {
+    "name": "Negroni Ember",
+    "category": "cocktail",
+    "description": "Classic Negroni with a smoky twist — bittersweet sophistication that burns slow and deep.",
+    "moods": ["bold", "reflective", "rebellious"],
+    "weather": ["cool", "cloudy"],
+    "time_of_day": ["evening", "night"],
+    "season": ["fall", "winter"],
+    "image_url": "https://example.com/images/negroni_ember.jpg"
+  },
+  {
+    "name": "Citrus Spark Mojito",
+    "category": "cocktail",
+    "description": "Mint, lime, and sparkling zest — a rush of freshness for days that demand sunshine.",
+    "moods": ["joyful", "playful", "free"],
+    "weather": ["hot", "sunny"],
+    "time_of_day": ["afternoon", "evening"],
+    "season": ["summer"],
+    "image_url": "https://example.com/images/citrus_spark_mojito.jpg"
+  },
+  {
+    "name": "Whiskey Glow",
+    "category": "cocktail",
+    "description": "Honey, lemon, and warm whiskey — a golden hug when the world feels cold.",
+    "moods": ["melancholic", "tired", "warm"],
+    "weather": ["cold", "windy"],
+    "time_of_day": ["night"],
+    "season": ["winter"],
+    "image_url": "https://example.com/images/whiskey_glow.jpg"
+  },
+  {
+    "name": "Cold Brew Focus",
+    "category": "coffee",
+    "description": "Smooth, slow-steeped cold brew that keeps your mind sharp and your pulse steady.",
+    "moods": ["productive", "focused", "calm"],
+    "weather": ["warm", "clear"],
+    "time_of_day": ["morning", "afternoon"],
+    "season": ["spring", "summer"],
+    "image_url": "https://example.com/images/cold_brew_focus.jpg"
+  },
+  {
+    "name": "Berry Hibiscus Chill",
+    "category": "tea",
+    "description": "Tart hibiscus and wild berries over ice — juicy, floral, and delightfully vibrant.",
+    "moods": ["refreshing", "lighthearted", "cheerful"],
+    "weather": ["hot", "humid"],
+    "time_of_day": ["afternoon"],
+    "season": ["summer"],
+    "image_url": "https://example.com/images/berry_hibiscus_chill.jpg"
+  },
+  {
+    "name": "Midnight Espresso Martini",
+    "category": "cocktail",
+    "description": "A dark, silky cocktail that fuses espresso with vodka — elegant energy for long nights.",
+    "moods": ["confident", "social", "creative"],
+    "weather": ["cool", "clear"],
+    "time_of_day": ["night"],
+    "season": ["all"],
+    "image_url": "https://example.com/images/midnight_espresso_martini.jpg"
+  }
+]
